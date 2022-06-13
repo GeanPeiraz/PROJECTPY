@@ -1,0 +1,17 @@
+import plotly.express as px
+df = px.data.iris()
+# Use directly Columns as argument. You can use tab completion for this!
+fig = px.scatter(df, x=df.sepal_length, y=df.sepal_width, color=df.species, size=df.petal_length)
+fig.show()
+
+import plotly.express as px
+df = px.data.iris()
+# Use column names instead. This is the same chart as above.
+fig = px.scatter(df, x='sepal_length', y='sepal_width', color='species', size='petal_length')
+fig.show()
+
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x=df.sepal_length, y=df.sepal_width, size=df.petal_length,
+                 hover_data=[df.index])
+fig.show()
